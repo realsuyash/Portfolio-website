@@ -1,27 +1,34 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  overflow: hidden;
 }
 
-.container{
-  height: 100vh;
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
   width: 100%;
   position: relative;
-  background: #F0F2F0;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #000C40, #F0F2F0);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #F0F2F0;
+  background: -webkit-linear-gradient(to right, #000C40, #F0F2F0);
+  background: linear-gradient(to right, #000C40, #F0F2F0);
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
-.container .box{
+.container .box {
   height: 86vh;
   width: 75%;
   padding: 0 20px;
@@ -30,59 +37,64 @@ background: linear-gradient(to right, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, F
   border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 20px;
   display: flex;
+  flex-direction: column;
   backdrop-filter: blur(25px);
   box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.15);
+  overflow-y: auto;
 }
 
-.container nav{
-  height: 7px;
-  width: 87%;
-  position: absolute;
+.container nav {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 15px auto;
-  padding: 30px;
-
+  padding: 20px;
+  position: relative;
+  height: auto;
 }
 
-.container .logo{
+.container .logo {
   font-size: 32px;
   font-weight: 700;
   text-decoration: none;
   color: #000C40;
   margin-left: 30px;
+  transition: transform 0.3s ease;
 }
 
-.container .logo:hover{
+.container .logo:hover {
   font-weight: 700;
   transform: scale(1.1);
   z-index: 1;
 }
 
-.container nav ul li{
-  display: inline-block;
-  padding: 0 20px;
+.container nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.container nav ul li a{
+.container nav ul li {
+  display: inline-block;
+  padding: 0 20px;
+  margin: 5px 0;
+}
+
+.container nav ul li a {
   text-decoration: none;
   font-size: 18px;
   color: black;
   transition: 0.5s;
 }
 
-.link{
+.link {
   text-decoration: none;
   font-size: 18px;
   color: #000c40;
 }
 
-.container nav ul li a:hover{
-  
-}
-
-.content{
+.content {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -90,44 +102,49 @@ background: linear-gradient(to right, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, F
   width: 100%;
   margin-top: 8%;
   padding-left: 80px;
+  flex-wrap: wrap;
 }
 
-.content .section-one{
+.content .section-one {
   position: relative;
   width: 50%;
 }
 
-.content .section-one h1{
+.content .section-one h1 {
   margin-bottom: 20px;
-  font-size: 50px;
+  font-size: clamp(30px, 5vw, 50px);
   font-weight: 700;
   color: rgb(0, 0, 0);
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.content .section-one h3{
+.content .section-one h3 {
   margin-bottom: 20px;
   color: #000C40;
-  font-size: 50px;
+  font-size: clamp(24px, 4vw, 50px);
   font-weight: 700;
-}
-.content .section-one p{
-  margin-bottom: 15px;
-  font-size: 15px;
-  font-weight: 700;
-  color: rgb(0, 0, 0);
 }
 
-.my-info{
-  font-size: 20px;
+.content .section-one p {
+  margin-bottom: 15px;
+  font-size: clamp(14px, 2vw, 15px);
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  max-width: 600px;
+}
+
+.my-info {
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: 500;
 }
 
-#letter-s{
+#letter-s {
   letter-spacing: -0.21em;
   color: rgb(0, 0, 82);
 }
 
-.pictures{
+.pictures, .pictures1, .pictures2 {
   height: 130px;
   width: 130px;
   margin-right: 240px;
@@ -139,29 +156,9 @@ background: linear-gradient(to right, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, F
   align-items: center;
   background-position: center;
 }
-.pictures1{
-  height: 130px;
-  width: 130px;
-  margin-right: 240px;
+
+.pictures1, .pictures2 {
   margin-bottom: 1px;
-  transform: scale(3);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-position: center;
-}
-.pictures2{
-  height: 130px;
-  width: 130px;
-  margin-right: 240px;
-  margin-bottom: 1px;
-  transform: scale(3);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-position: center;
 }
 
 .transparent-textbox {
@@ -173,29 +170,25 @@ background: linear-gradient(to right, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, F
   margin-bottom: 10px;
   margin-right: 5px;
   padding: 5px;
-
+  width: 100%;
+  max-width: 300px;
 }
-.transparent-textbox::placeholder{
+
+.transparent-textbox::placeholder {
   color: rgb(7, 0, 0);
 }
 
-#submit-button{
+#submit-button {
   background-color: transparent;
   border: 1px solid #000; 
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.6);
   padding: 5px 5px 3px;
   margin-bottom: 10px;
   margin-right: 5px;
-  position: absolute;
-  
+  position: relative;
 }
 
-.content .section-one h1{
-  white-space: nowrap;
-  overflow: hidden; /
-}
-
-.skill-container{
+.skill-container {
   width: 100%;
   height: auto;
   display: flex;
@@ -203,17 +196,19 @@ background: linear-gradient(to right, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, F
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
 }
 
-#skill-h1{
-  margin-left: 35%;
+#skill-h1 {
+  text-align: center;
   margin-bottom: 20px;
+  width: 100%;
 }
 
-.c-flex{
+.c-flex {
   display: flex;
   height: 150px;
-  width:  150px;
+  width: 150px;
   background-color: transparent;
   color: black;
   padding: 20px;
@@ -222,41 +217,43 @@ background: linear-gradient(to right, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, F
   margin: 14px;
   border: #000c40 solid 0.6px;
   animation: slide-in 2s infinite;
+  align-items: center;
+  justify-content: center;
 }
 
-.c-flex:hover{
+.c-flex:hover {
   animation: swing 1s infinite;
   transform-origin: center;
 }
 
 @keyframes swing {
-0% {
+  0% {
     transform: rotate(0deg);
-}
-100% {
+  }
+  100% {
     transform: rotate(360deg);
-}
+  }
 }
 
-#footer{
+#footer {
   padding: 10px;
   text-align: center;
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  margin-top: auto;
 }
 
-#list{
+#list {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 0px;
   list-style: none;
   padding: 0;
+  flex-wrap: wrap;
 }
 
-#li-item{
+#li-item {
   padding-top: 5px;
   margin-right: 20px;
   display: flex;
@@ -264,45 +261,338 @@ background: linear-gradient(to right, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, F
   cursor: pointer;
 }
 
-#icon{
+#icon {
   color: black;
 }
 
-/*download button*/
-
 button {
-  padding: 25px 30px;
+  padding: 15px 25px;
   border-radius: 50px;
   border: 0;
   background-color: transparent;
-
   box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-size: 15px;
   transition: all .5s ease;
- }
+  margin: 10px 0;
+}
  
- button:hover {
+button:hover {
   letter-spacing: 3px;
   background-color: hsl(261deg 80% 48%);
   color: hsl(0, 0%, 100%);
   box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
- }
+}
  
- button:active {
+button:active {
   letter-spacing: 3px;
   background-color: hsl(261deg 80% 48%);
   color: hsl(0, 0%, 100%);
   box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
   transform: translateY(10px);
   transition: 100ms;
- }
+}
 
- .resume{
+.resume {
   width: 100%;
   height: 55vh;
   margin-bottom: 80px;
- }
+}
 
- 
+/* Enhanced Media Queries for Better Responsiveness */
+@media (max-width: 1200px) {
+  .container .box {
+    width: 85%;
+    height: auto;
+    min-height: 80vh;
+  }
+  
+  .content {
+    padding-left: 40px;
+  }
+  
+  .pictures, .pictures1, .pictures2 {
+    transform: scale(2.5);
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .content {
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 100px;
+  }
+  
+  .content .section-one {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .pictures, .pictures1, .pictures2 {
+    transform: scale(2);
+    margin-right: 0;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    height: auto;
+  }
+  
+  .container .box {
+    width: 95%;
+    padding: 10px;
+    height: auto;
+    min-height: 90vh;
+  }
+  
+  .container nav {
+    flex-direction: column;
+    margin: 10px auto;
+    padding: 10px;
+  }
+  
+  .container .logo {
+    margin-left: 0;
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+  
+  .container nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container nav ul li {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .content {
+    padding: 10px;
+    margin-top: 50px;
+  }
+  
+  .pictures, .pictures1, .pictures2 {
+    transform: scale(1.5);
+  }
+  
+  .c-flex {
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 5px;
+  }
+  
+  .container .box {
+    width: 98%;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  
+  .container .logo {
+    font-size: 24px;
+  }
+  
+  .container nav ul li a {
+    font-size: 16px;
+  }
+  
+  .content .section-one h1 {
+    font-size: 28px;
+  }
+  
+  .content .section-one h3 {
+    font-size: 24px;
+  }
+  
+  .content .section-one p {
+    font-size: 14px;
+  }
+  
+  .pictures, .pictures1, .pictures2 {
+    transform: scale(1);
+    height: 100px;
+    width: 100px;
+  }
+  
+  .c-flex {
+    height: 100px;
+    width: 100px;
+    margin: 8px;
+    font-size: 12px;
+  }
+  
+  button {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 700px) {
+  * {
+    overflow: visible;
+  }
+  
+  .container {
+    height: auto;
+    padding: 20px 10px;
+  }
+  
+  .container .box {
+    height: auto;
+    min-height: auto;
+    overflow-y: visible;
+    margin: 20px 0;
+  }
+}
+
+/* Technologies Page Specific Styles */
+.tech-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+}
+
+.tech {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#skill-h1 {
+  font-size: clamp(24px, 3vw, 36px);
+  color: #000C40;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.c-flex {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 12, 64, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.c-flex img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.c-flex:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.c-flex:hover img {
+  transform: scale(1.1);
+}
+
+.c-flex::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000C40;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.c-flex:hover::after {
+  opacity: 1;
+}
+
+/* Responsive styles for technologies page */
+@media (max-width: 992px) {
+  .skill-container {
+    gap: 15px;
+    max-width: 700px;
+  }
+  
+  .c-flex {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-content {
+    padding: 10px;
+  }
+  
+  .skill-container {
+    gap: 12px;
+  }
+  
+  .c-flex {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 576px) {
+  #skill-h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .skill-container {
+    gap: 10px;
+  }
+  
+  .c-flex {
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+  }
+  
+  .c-flex::after {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .c-flex {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+  }
+}
+
